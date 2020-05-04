@@ -48,8 +48,16 @@ The postcode feature was binned into groups based on the area/district code. Thi
 ### Modeling
 Features with lots of missing records and those that may not contribute to the house price prediction were dropped. These features are ‘id’, ‘status’ , size_sqft and ‘price_qualifier’. ‘status’ was dropped because it contains three labels with one of the labels having 99.9% of the total count. ‘size_sqft’ and ‘price_qualifier’ were dropped because they both have over 78% missing values.
 One-hot-encoding was used to transform the categorical features into numerical for modeling.  
-80% - 20% train-test split was used
+
+80% - 20% train-test split was used.  
+
 Models:  
 Machine learning models including linear regression, Random forest regressor, Gradient boosting regressor, XGBoost and LightGBM were used to model the data with LightGBM coming out as the best based on MSE. The results are summarized in the table below:
-
-
+Model | RMSE CV (train) | RMSE CV (test)
+------| -------------------------------| -----------------------------
+Linear regression (Baseline) |    91.3  |  88.1
+Random forest |  96.2  |  95.2
+Gradient boosting | 98.7  | 96.2
+Stochastic gradient boosting | 100  | 99.3
+LightGBM | 100  | 99.3
+XGBoost | 100  | 99.3
