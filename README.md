@@ -42,7 +42,7 @@ The exploration of the relationship between target and features as well as the r
 * For houses with more than 5 bedrooms, the highest mean price tends to vary with the number of bedrooms. This implies that other factors are at play in determining the highest price.  
 * Only two types of properties have 12 bedrooms (flat and semi-detached).  
 ### Correlation with target
-Some of the features are positively correlated with house price. These include n_bathrooms, n_bedrooms, n_reception_rooms , distance_to_closest_airport and size_sqft. Distance_to_charing_cross station and longitude are negatively correlated with the target. The negative correlation of distance_to_charing_cross the target with seems to be surprising as Charing cross station is a famous station in Central London. However, this is what the data shows. Other features are weakly correlated with the target. 
+Some of the features are positively correlated with house price. These include n_bathrooms, n_bedrooms, n_reception_rooms , distance_to_closest_airport and size_sqft. Distance_to_charing_cross station and longitude are negatively correlated with the target. The negative correlation of distance_to_charing_cross the target with seems to be surprising as Charing cross station is a famous station in Central London. However, this is what the data shows. Other features are weakly correlated with the target. Correlation plot showing the relationship between features and target is presented in Figure 1. 
 
 ![Correlation Plot](./photos/Corr.PNG)  
 <p align="center">
@@ -68,14 +68,14 @@ Stochastic gradient boosting | 155262
 LightGBM | 157136
 XGBoost | 157493
 ### Feature importances  
-The feature importances shows that number of bathrooms, distance to charing cross station and number of bedroom are the most important features for predicting house price in London. Number of bathrooms turns out to be the strongest predictor of house price.
+The feature importances shows that number of bathrooms, distance to charing cross station and number of bedroom are the most important features for predicting house price in London. Number of bathrooms turns out to be the strongest predictor of house price. Feature importances plots for all models are shown in Figure 2.
 
 <br/>  
 
 ![Feature importances](./photos/FI_1.PNG)  
 ![Feature importances](./photos/FI_2.PNG) 
 <p align="center">
-  <i> Figure 2a: Feature importances for toddler dataset </i>
+  <i> Figure 2a: Feature importances for all models </i>
 </p>  
 
 ### Conclusion
