@@ -44,9 +44,9 @@ The exploration of the relationship between target and features as well as the r
 ### Correlation with target
 Some of the features are positively correlated with house price. These include n_bathrooms, n_bedrooms, n_reception_rooms , distance_to_closest_airport and size_sqft. Distance_to_charing_cross station and longitude are negatively correlated with the target. The negative correlation of distance_to_charing_cross the target with seems to be surprising as Charing cross station is a famous station in Central London. However, this is what the data shows. Other features are weakly correlated with the target. 
 
-![Correlation Plot for Toddler](./photos/corrplot_toddler.png)  
+![Correlation Plot](./photos/Corr.PNG)  
 <p align="center">
-  <i> Figure 1a: Correlation plot for toddler dataset </i>
+  <i> Figure 1: Correlation plot showing relationship between features and target </i>
 </p>   
 
 ### Feature Engineering  
@@ -72,7 +72,8 @@ The feature importances shows that number of bathrooms, distance to charing cros
 
 <br/>  
 
-![Feature importances for toddler dataset](./photos/Children.png)  
+![Feature importances](./photos/FI_1.PNG)  
+![Feature importances](./photos/FI_2.PNG) 
 <p align="center">
   <i> Figure 2a: Feature importances for toddler dataset </i>
 </p>  
