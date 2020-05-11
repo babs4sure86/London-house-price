@@ -1,6 +1,6 @@
 # How can we predict house price from its features?  
 ## Introduction  
-Real estate is a lucrative business that has attracted great investments in recent times. In order to be competitive in business, real estate agents needs to be able to value a house easily and appropriately before they can invest in such property. The business question that I seek to answer is: How can real estate agents predict house price from a number of house features such that the house is not under-valued or over-valued. This is critical, as agents want to avoid under-valuation to maximize profit and also avoid over-valuation to prevent the property from staying too long in the market.
+Real estate is a lucrative business that has attracted great investments in recent times. In order to be competitive in business, real estate agents needs to be able to value a house easily and appropriately before they can invest in such property. The business question that I seek to answer is: How can real estate agents predict house price from a number of house features such that the house is not under-valued or over-valued?. This is critical, as agents want to avoid under-valuation to maximize profit and also avoid over-valuation to prevent the property from staying too long in the market.
  To address this, house prices including their features were scraped from zoopla website, a popular property letting and sale website in the England. The data were scrapped in json format and then converted to csv format to be used for this project.
 ### Data collection  
 The house price data was scrapped from zoopla website.
@@ -42,7 +42,13 @@ The exploration of the relationship between target and features as well as the r
 * For houses with more than 5 bedrooms, the highest mean price tends to vary with the number of bedrooms. This implies that other factors are at play in determining the highest price.  
 * Only two types of properties have 12 bedrooms (flat and semi-detached).  
 ### Correlation with target
-Some of the features are positively correlated with house price. These include n_bathrooms, n_bedrooms, n_reception_rooms , distance_to_closest_airport and size_sqft. Distance_to_charing_cross station and longitude are negatively correlated with the target. The negative correlation of distance_to_charing_cross the target with seems to be surprising as Charing cross station is a famous station in Central London. However, this is what the data shows. Other features are weakly correlated with the target.  
+Some of the features are positively correlated with house price. These include n_bathrooms, n_bedrooms, n_reception_rooms , distance_to_closest_airport and size_sqft. Distance_to_charing_cross station and longitude are negatively correlated with the target. The negative correlation of distance_to_charing_cross the target with seems to be surprising as Charing cross station is a famous station in Central London. However, this is what the data shows. Other features are weakly correlated with the target. 
+
+![Correlation Plot for Toddler](./photos/corrplot_toddler.png)  
+<p align="center">
+  <i> Figure 1a: Correlation plot for toddler dataset </i>
+</p>   
+
 ### Feature Engineering  
 The postcode feature was binned into groups based on the area/district code. This reduces the number of unique values in the postcode variable from 18000 to 100.
 ### Modeling
@@ -53,11 +59,24 @@ One-hot-encoding was used to transform the categorical features into numerical f
 
 Models:  
 Machine learning models including linear regression, Random forest regressor, Gradient boosting regressor, XGBoost and LightGBM were used to model the data with LightGBM coming out as the best based on MSE. The results are summarized in the table below:
-Model | RMSE CV (train) | RMSE CV (test)
-------| -------------------------------| -----------------------------
-Linear regression (Baseline) |    91.3  |  88.1
-Random forest |  96.2  |  95.2
-Gradient boosting | 98.7  | 96.2
-Stochastic gradient boosting | 100  | 99.3
-LightGBM | 100  | 99.3
-XGBoost | 100  | 99.3
+Model | RMSE CV
+------| -------------------------------
+Linear regression (Baseline) |    213260  
+Random forest |  184477
+Gradient boosting | 156666
+Stochastic gradient boosting | 155262
+LightGBM | 157136
+XGBoost | 157493
+### Feature importances  
+The feature importances shows that number of bathrooms, distance to charing cross station and number of bedroom are the most important features for predicting house price in London. Number of bathrooms turns out to be the strongest predictor of house price.
+
+<br/>  
+
+![Feature importances for toddler dataset](./photos/Children.png)  
+<p align="center">
+  <i> Figure 2a: Feature importances for toddler dataset </i>
+</p>  
+
+### Conclusion
+London house price scrapped from zoopla website consisting of 36213 records and 20 columns were preprocessed and used to build a predictive model for predicting the price of a house in London. Machine learning models including linear regression, random forest regressor, gradient boosting regressor, stochastic gradient boosting regressor, LightGBM regressor and XGBoost regressor were used with Stochastic gradient boosting being the best model based on mean square error (MSE). Feature importances show that number of bathrooms, number of bedrooms and distance from Charing cross station are the most important features for predicting house price.  
+
